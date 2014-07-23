@@ -1,0 +1,37 @@
+<section data-ng-controller="StudentController" data-ng-init="find()">
+	<h1>
+		Lista de Estudiantes
+		<div class="pull-rigth">
+			<a ui-sref="create student" class="btn btn-primary" >Registro de Estudiantes</a>
+		</div>
+	</h1>
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>DNI</th>
+				<th>
+					<a href="" ng-click="predicate = 'names'; reverse=false">
+						Apellidos Nombres
+					</a>
+				</th>
+				<th>Código</th>
+				<th>Acciones</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="student in students | orderBy:predicate:reverse">
+				<td>{{$index+1}}</td>
+				<td>{{student.document | }}</td>
+				<td>{{student.lastNames}} {{student.names}}</td>
+				<td>{{student.code}}</td>
+				<td><a href="/#!/students/edit/{{student._id}}">Editar</a></td>
+
+
+			</tr>
+		</tbody>
+	</table>
+	
+</section>

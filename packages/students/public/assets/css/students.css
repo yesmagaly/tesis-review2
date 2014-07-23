@@ -1,0 +1,38 @@
+.students-example h1: {
+	background-color: purple
+}
+
+.img-panel{
+	border: 1px solid #ccc;
+	height: 70px;
+	width: 70px;
+}
+.img-one{
+	border: 1px solid #bbb;
+	height: 30px;
+	width: 30px;
+}
+.img-two{
+	border: 1px solid #aaa;
+	height: 20px;
+	width: 20px;
+}
+.img-mentor{
+	border: 1px solid #ddd;
+	height: 15px;
+	width: 15px;
+}
+
+.well img {
+	margin-right: 10px;
+}
+.well-header{
+	font-size: 1.5em;
+	padding-left: 10px;
+	text-align: center;
+
+}
+
+.amount{
+	font-weight: bold;
+}
