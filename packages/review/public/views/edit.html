@@ -1,0 +1,61 @@
+<div ng-controller="StudentController" ng-init="findOne()">
+	
+	 <form class="form-horizontal col-md-6" role="form" data-ng-submit="update()">
+        
+        <div class="form-group">
+            <label mean-token="'create-names'" class="col-md-3 control-label">Nombres</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" data-ng-model="student.names" id="names" placeholder="Nombres" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label mean-token="'create-lastNames'" class="col-md-3 control-label">Apellidos</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" data-ng-model="student.lastNames" id="lastNames" placeholder="Apellidos" required>
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label mean-token="'create-document'" class="col-md-3 control-label">DNI</label>
+            <div class="col-md-9">
+                <input type="number" class="form-control" data-ng-model="student.document" id="document" placeholder="DNI" required>
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label mean-token="'create-code'" class="col-md-3 control-label">Código</label>
+            <div class="col-md-9">
+                <input type="number" class="form-control" data-ng-model="student.code" id="code" placeholder="Código" required>
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label mean-token="'create-address'" class="col-md-3 control-label">Dirección</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" data-ng-model="student.address" id="address" placeholder="Dirección" required>
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label mean-token="'create-email'" class="col-md-3 control-label">Email</label>
+            <div class="col-md-9">
+                <input type="email" class="form-control" data-ng-model="student.email" id="email" placeholder="Email" required>
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label mean-token="'create-telephone'" class="col-md-3 control-label">Teléfono</label>
+            <div class="col-md-9">
+                <input type="number" class="form-control" data-ng-model="student.telephone" id="telephone" placeholder="Teléfono" required>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-9">
+                <button type="submit" class="btn btn-info">Actualizar</button>
+            </div>
+        </div>
+    </form>
+</div>
