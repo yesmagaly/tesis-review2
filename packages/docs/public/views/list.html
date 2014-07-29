@@ -1,0 +1,23 @@
+<div data-ng-init="find()" data-ng-controller="DocsController">
+  <header  class="header-page">
+    <h2>
+      Categories List
+      <div class="pull-right">
+        <a ui-sref="create doc"class="btn btn-success btn-sm" >
+          <i class="fa fa-plus-circle"></i>  Crear Documento
+        </a>
+      </div>
+    </h2>
+  </header>
+  
+  <ul class="list-group">
+    <li ng-repeat="doc in docs" class="list-group-item">
+      <i class="fa fa-tag fa-fw"></i>&nbsp; {{doc.title}}
+      <div class="pull-right">
+        <button ng-click="remove(doc._id)" class="btn btn-danger btn-xs" >
+          <i class="fa fa-trash-o"></i> Delete
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
