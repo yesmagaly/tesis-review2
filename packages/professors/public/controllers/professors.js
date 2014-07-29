@@ -2,13 +2,14 @@
 
 angular.module('mean.professors')
     .controller('ProfessorController', [
-        '$scope',
-        '$location',
+        '$scope', 
+        'Global', 
         '$state',
-        'Global',
-        'Professors',
         '$stateParams',
-    function($scope, $location,  $state, Global, Professors, $stateParams) {
+        'Professors',
+        'Restangular',
+        'ProfessorsLocal',
+    function($scope, Global, $state, $stateParams, Professors, Restangular, ProfessorsLocal) {
 
         $scope.global = Global;
 
@@ -22,7 +23,8 @@ angular.module('mean.professors')
 
         $scope.find = function() {
             Professors.getList().then(function(professors) {
-                $scope.professors = professors;
+                ProfessorsLocal.set(professors);
+              $scope.professors = ProfessorsLocal.all();
             });
         };
 
@@ -37,5 +39,18 @@ angular.module('mean.professors')
             $scope.professor.customPUT($scope.professor, $scope.professor._id);
             $state.go('all professor');    
         };
+          $scope.remove = function(id) {
+          
+            var professor = ProfessorsLocal.get(id);
+            professor.customDELETE(id).then(function () {
+              ProfessorsLocal.remove(id);
+            });
+          
+        };
+        $scope.orderByValue = function (val) {
+            $scope.filterSelected = val;
+        }
+
+        $scope.predicate = '-code';
     }
 ]);

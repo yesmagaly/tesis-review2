@@ -1,33 +1,58 @@
-<section data-ng-controller="ProfessorController" data-ng-init="find()">
+<section data-ng-controller="ProfessorController">
 	<h1>
 		Lista de Docentes
 		<div class="pull-rigth">
 			<a ui-sref="create professor" class="btn btn-primary" >Registro de Docentes</a>
 		</div>
 	</h1>
-	
-	<table class="table">
-		<thead>
-			<tr>
-				<th>#</th>
-				<th>DNI</th>
-				<th>Apellidos Nombres</th>
-				<th>Código</th>
-				<th>Acciones</th>
-				
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="professor in professors">
-				<td>{{$index+1}}</td>
-				<td>{{professor.document}}</td>
-				<td>{{professor.lastNames}} {{professor.names}}</td>
-				<td>{{professor.code}}</td>
-				<td><a href="#!/professors/edit/{{professor._id}}">Editar</a></td>
+	<body ng-app>
+		
+		<hr>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<div class="input-group">
+					<span class= "input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+					<input type="text"class="form-control" placeholder="Buscar Docente" ng-model="buscar.lastNames">
+				</div>
+			</div>
+		</div>
+		<div class="panel-body">
+			<table class="table" ng-init="find()">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>DNI</th>
+						<th>
+							<a href="" ng-click="orderByValue('names')">
+								Apellidos Nombres
+							</a>
 
-
-			</tr>
-		</tbody>
-	</table>
-	
+							<a href="" ng-click="orderByValue('-names')">
+								<i class="fa fa-caret-down"></i>
+							</a>
+						</th>
+						<th>Código</th>
+						<th>Acciones</th>
+					
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="professor in professors | orderBy:filterSelected |filter:buscar">
+						<td>{{$index+1}}</td>
+						<td>{{professor.document}}</td>
+						<td>{{professor.lastNames | uppercase}} {{professor.names}}</td>  
+						<td>{{professor.code}}</td>
+						<td>
+							<a href="/#!/professors/edit/{{professor._id}}" class="btn btn-success btn-xs" >
+								<i class="fa fa-pencil-square-o"></i> Editar
+							</a>
+					      	<button ng-click="remove(professor._id)" class="btn btn-danger btn-xs" >
+					    	    <i class="fa fa-trash-o"></i> Delete
+					      	</button>
+						</td>				
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
 </section>
