@@ -8,7 +8,8 @@ angular.module('mean.students')
         '$stateParams',
         'Students',
         'Restangular',
-    function($scope, Global, $state, $stateParams, Students, Restangular) {
+        'StudentsLocal',
+    function($scope, Global, $state, $stateParams, Students, Restangular, StudentsLocal) {
         
         $scope.global = Global;
         
@@ -21,7 +22,9 @@ angular.module('mean.students')
 
         $scope.find = function() {
             Students.getList().then(function(students) {
-                $scope.students = students;
+                // Add all categories into the factory StudentsLocal.
+              StudentsLocal.set(students);
+              $scope.students = StudentsLocal.all();
             });
         };
 
@@ -37,9 +40,21 @@ angular.module('mean.students')
             $state.go('all students');    
         };
 
+        $scope.remove = function(id) {
+          
+            var student = StudentsLocal.get(id);
+            student.customDELETE(id).then(function () {
+              StudentsLocal.remove(id);
+            });
+          
+        };
+
+        // Filters
+
         $scope.orderByValue = function (val) {
             $scope.filterSelected = val;
         }
 
+        $scope.predicate = '-code';
     }
 ]);
