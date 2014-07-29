@@ -1,4 +1,4 @@
-<section data-ng-controller="StudentController" data-ng-init="find()">
+<section data-ng-controller="StudentController">
 	<h1>
 		Lista de Estudiantes
 		<div class="pull-rigth">
@@ -6,14 +6,18 @@
 		</div>
 	</h1>
 	
-	<table class="table">
+	<table class="table" ng-init="find()">
 		<thead>
 			<tr>
 				<th>#</th>
 				<th>DNI</th>
 				<th>
-					<a href="" ng-click="predicate = 'names'; reverse=false">
+					<a href="" ng-click="orderByValue('names')">
 						Apellidos Nombres
+					</a>
+
+					<a href="" ng-click="orderByValue('-names')">
+						[z-a]
 					</a>
 				</th>
 				<th>Código</th>
@@ -22,10 +26,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="student in students | orderBy:predicate:reverse">
+			<tr ng-repeat="student in students | orderBy:filterSelected">
 				<td>{{$index+1}}</td>
-				<td>{{student.document | }}</td>
-				<td>{{student.lastNames}} {{student.names}}</td>
+				<td>{{student.document}}</td>
+				<td>{{student.lastNames}}</td>  
+				<td>{{student.names}}</td>
 				<td>{{student.code}}</td>
 				<td><a href="/#!/students/edit/{{student._id}}">Editar</a></td>
 

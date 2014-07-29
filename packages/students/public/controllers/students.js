@@ -3,20 +3,15 @@
 angular.module('mean.students')
     .controller('StudentController', [
         '$scope', 
-        '$location',
+        'Global', 
         '$state',
         '$stateParams',
-        'Global', 
         'Students',
         'Restangular',
-    function($scope, $location,  $state, $stateParams, Global, Students, Restangular) {
+    function($scope, Global, $state, $stateParams, Students, Restangular) {
         
         $scope.global = Global;
-        $scope.student = {};
-
-        Students.getList().then(function(students) {
-            $scope.students = students;
-        });
+        
 
         $scope.create = function() {
            Students.post($scope.student).then(function (student) {
@@ -25,7 +20,9 @@ angular.module('mean.students')
         };
 
         $scope.find = function() {
-          
+            Students.getList().then(function(students) {
+                $scope.students = students;
+            });
         };
 
         $scope.findOne = function  () {
@@ -40,6 +37,9 @@ angular.module('mean.students')
             $state.go('all students');    
         };
 
-        $scope.predicate = '-code';
+        $scope.orderByValue = function (val) {
+            $scope.filterSelected = val;
+        }
+
     }
 ]);
