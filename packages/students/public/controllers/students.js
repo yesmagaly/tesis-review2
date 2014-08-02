@@ -33,7 +33,7 @@ angular.module('mean.students')
             Students.one(studentId).get().then(function (student) {
                 $scope.student = student;
             });
-        }
+        };
 
         $scope.update = function () {
             $scope.student.customPUT($scope.student, $scope.student._id);
