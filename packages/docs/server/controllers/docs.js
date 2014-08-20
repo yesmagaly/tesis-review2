@@ -44,7 +44,7 @@ exports.create = function(req, res) {
  */
 exports.update = function(req, res) {
     var doc = req.doc;
-    
+
     doc = _.extend(doc, req.body);
 
     doc.save(function(err) {
