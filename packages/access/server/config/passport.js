@@ -157,10 +157,11 @@ module.exports = function(passport) {
         'google.id': profile.id
       }, function(err, user) {
         if (user) {
+          user.accessToken = accessToken;
           return done(err, user);
         }
         user = new User({
-          name: profile.displayName,
+          name: profile.displayName,  
           email: profile.emails[0].value,
           username: profile.emails[0].value,
           provider: 'google',
