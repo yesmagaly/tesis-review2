@@ -1,5 +1,12 @@
 <div ng-controller="mentorPanelController" ng-init="init()">
-	<div class="row">
+	<div class="page-header">
+    <div class="row">
+      <!-- Page header, center on small screens -->
+      <h1 class="col-xs-12 col-sm-4 text-left-sm">
+      <i class="fa fa-user"></i>&nbsp;&nbsp;Panel del Mentor</h1>
+
+    </div>
+  </div>
 		<div class="col-lg-4 col-md-4 col-sm-4">
 			<div class="panel panel-success">
 				<div class="panel-heading">
@@ -76,7 +83,7 @@
               <a href="#" class="follower-name">{{student.names}}</a><br>
               <a href="#" class="follower-username">{{student.created | date:'dd-M-yyyy H:mm'}}</a>
             </div>
-          </div>
+          </div class="follower" ng-repeat="profes in students">
 
 				</div>
 			</div>
@@ -90,9 +97,9 @@
 						Mis Jurados
 					</h3>
 				</div>
-				<div class="panel-body">
-					<div ng-repeat="professor in professors">
-						<img class="img-one" src="">
+				<div class="panel-body widget-followers active">
+					<div class="follower" ng-repeat="professor in professors">
+						<img src="/bower_components/pixel-admin/dist/images/pixel-admin/avatar.png" alt="" class="follower-avatar">
 						<div>
 							{{professor.names}}
 							<div class="date">{{professor.created | date:'dd-M-yyyy H:mm'}}</div> 
@@ -104,6 +111,5 @@
 			
 			
 		</div>
-	</div>
-	
+		
 </div>

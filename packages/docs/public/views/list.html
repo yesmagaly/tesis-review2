@@ -1,14 +1,31 @@
 <div data-ng-init="find()" data-ng-controller="DocsController">
-  <header  class="header-page">
-    <h2>
-      Categories List
-      <div class="pull-right">
-        <a ui-sref="create doc"class="btn btn-success btn-sm" >
-          <i class="fa fa-plus-circle"></i>  Crear Documento
-        </a>
+
+   <div class="page-header">
+      
+      <div class="row">
+        <!-- Page header, center on small screens -->
+        <h1 class="col-xs-12 col-sm-4 text-center text-left-sm">
+          <i class="fa fa-file-word-o"></i>
+          &nbsp;&nbsp;Lista de Documentos
+        </h1>
+
+        <div class="col-xs-12 col-sm-8">
+          <div class="row">
+            <hr class="visible-xs no-grid-gutter-h">
+            <!-- "Create project" button, width=auto on desktops -->
+            <div class="pull-right col-xs-12 col-sm-auto">
+              <a ui-sref="create doc" class="btn btn-primary btn-labeled" style="width: 100%;">
+                <span class="btn-label icon fa fa-plus"></span>
+                Crear Documento
+              </a>
+            </div>
+
+            <!-- Margin -->
+            <div class="visible-xs clearfix form-group-margin"></div>
+          </div>
+        </div>
       </div>
-    </h2>
-  </header>
+    </div>
   
   <ul class="list-group">
     <li ng-repeat="doc in docs" class="list-group-item">

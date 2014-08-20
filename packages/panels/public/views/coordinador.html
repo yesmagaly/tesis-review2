@@ -9,7 +9,7 @@
     </div>
   </div>
 		
-		<div class="col-lg-4 col-md-4 col-sm-4">
+	<div class="col-lg-4 col-md-4 col-sm-4">
       <div class="stat-panel">
         <!-- Danger background, vertically centered text -->
         <div class="stat-cell bg-primary valign-middle">
@@ -66,21 +66,21 @@
 						Últimos usuarios registrados
 					</h3>
 				</div>
-				<div class="panel-body">
-					<div ng-repeat="student in students">
-						<img class="img-one" src="">
+				<div class="panel-body widget-followers active" class="panel-body">
+					<div class="follower" ng-repeat="student in students">
+						<img src="/bower_components/pixel-admin/dist/images/pixel-admin/avatar.png" alt="" class="follower-avatar">
 						<div>
 							{{student.names}}
 							<div class="date">{{student.created | date:'dd-M-yyyy H:mm'}}</div> 
 							<div class="student">Estudiante</div> 
 						</div>
 					</div>
-					<div ng-repeat="professor in professors">
-						<img class="img-one" src="">
+					<div class="follower" ng-repeat="professor in professors">
+						<img src="/bower_components/pixel-admin/dist/images/pixel-admin/avatar.png" alt="" class="follower-avatar">
 						<div>
 							{{professor.names}}
 							<div class="date">{{professor.created | date:'dd-M-yyyy H:mm'}}</div> 
-							<div class="student">Mentor</div> 
+							<div class="professor">Mentor</div> 
 						</div>
 					</div>
 				</div>

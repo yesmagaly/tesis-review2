@@ -1,10 +1,12 @@
 <section data-ng-controller="DocsController">
-  <header>
-    <h2>
-      Add Document      
-    </h2>
-  </header>
-  
+  <div class="page-header">
+    <div class="row">
+      <!-- Page header, center on small screens -->
+      <h1 class="col-xs-12 col-sm-4 text-left-sm">
+      <i class="fa fa-file-word-o"></i>&nbsp;&nbsp;Agregar Documento</h1>
+
+    </div>
+  </div>
   <form name="docForm" class="form-horizontal" role="form" data-ng-submit="create(docForm.$valid)" novalidate>
     
    <div class="form-group" ng-class="{ 'has-error' : submitted && docForm.title.$invalid }">
