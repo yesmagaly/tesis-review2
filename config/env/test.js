@@ -27,8 +27,8 @@ module.exports = {
     callbackURL: 'http://localhost:3000/auth/google/callback'
   },
   linkedin: {
-    clientID: 'API_KEY',
-    clientSecret: 'SECRET_KEY',
+    clientID: '279335094908-i2g244s2t8pbab24dn6iti0ak2djfi0t.apps.googleusercontent.com',
+    clientSecret: 'VhtPu_9nadUiVrb3nHp8ZfEu',
     callbackURL: 'http://localhost:3000/auth/linkedin/callback'
   },
   emailFrom: 'SENDER EMAIL ADDRESS', // sender address like ABC <abc@example.com>
