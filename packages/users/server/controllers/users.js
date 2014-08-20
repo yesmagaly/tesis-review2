@@ -15,6 +15,8 @@ var mongoose = require('mongoose'),
  * Auth callback
  */
 exports.authCallback = function(req, res) {
+  debugger;
+  req.session.access_token = req.user.accessToken;
   res.redirect('/');
 };
 
