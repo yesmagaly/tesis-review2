@@ -1,0 +1,109 @@
+<div ng-controller="mentorPanelController" ng-init="init()">
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-4">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Notificaciones
+					</h3>
+				</div>
+				<div class="panel-body">
+
+					<div class="notification-itemn">
+					<div>
+						<img class="img-two">
+						<div>
+						Carpio vargas EDgar Eloy te agregó
+						<div class="date">24/06/2014</div>
+						</div>
+					</div>
+					<div>
+						<img class="img-two">
+						<div>
+						Carpio vargas EDgar Eloy revisó tu proyecto
+						<div class="date">24/06/2014</div>
+						</div>
+					</div>
+					<div>
+						<img class="img-two">
+						<div>
+						Carpio vargas EDgar Eloy revisó tu proyecto
+						<div class="date">24/06/2014</div>
+						</div>
+					</div>
+					<div>
+						<img class="img-two">
+						<div>
+						Carpio vargas EDgar Eloy revisó tu proyecto
+						<div class="date">24/06/2014</div>
+						</div>
+					</div>
+					<div>
+						<img class="img-two">
+						<div>
+						Carpio vargas EDgar Eloy revisó tu proyecto
+						<div class="date">24/06/2014</div>
+						</div>
+					</div>
+					<div>
+						<img class="img-two">
+						<div>
+						Carpio vargas EDgar Eloy revisó tu proyecto
+						<div class="date">24/06/2014</div>
+						</div>
+					</div>
+						
+					</div>
+				
+					
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Estudiantes
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div ng-repeat="student in students">
+						<img class="img-one" src="">
+						<div>
+							{{student.names}}
+							<div class="date">{{student.created | date:'dd-M-yyyy H:mm'}}</div> 
+							<div class="student">Estudiante</div> 
+							<a ui-sref="all docs">
+								Ir al proyecto
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Mis Jurados
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div ng-repeat="professor in professors">
+						<img class="img-one" src="">
+						<div>
+							{{professor.names}}
+							<div class="date">{{professor.created | date:'dd-M-yyyy H:mm'}}</div> 
+							<div class="student">Mentor</div> 
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+	
+</div>

@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('mean.students').config(['$stateProvider',
+angular.module('mean.panels').config(['$stateProvider',
     function($stateProvider) {
         $stateProvider
         
         .state('home', {
             url: '/',
-            templateUrl: 'students/views/panel.html'
+            templateUrl: 'panels/views/coordinador.html'
         });
     }
 ]);

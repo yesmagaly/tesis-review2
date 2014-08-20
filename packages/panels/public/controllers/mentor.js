@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('mean.students')
-	.controller('PanelController', [
+angular.module('mean.panels')
+	.controller('mentorPanelController', [
 		'$scope',
 		'Students',
 		'Professors',

@@ -50,9 +50,26 @@ var StudentSchema = new Schema({
         default: '',
         trim: true
     },
+    mentors: [{
+        type: Schema.ObjectId,
+        ref: 'Mentor'
+    }],
     user: {
         type: Schema.ObjectId,
         ref: 'User'
+    }
+});
+
+var MentorSchema = new Schema({
+    category: {
+        type: String,
+        default: '',
+        trim: true
+    },
+   
+    professor: {
+        type: Schema.ObjectId,
+        ref: 'Professor'
     }
 });
 
