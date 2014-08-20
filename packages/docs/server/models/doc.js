@@ -29,6 +29,15 @@ var mongoose = require('mongoose'),
   		default: '',
   		trim: true
   	},
+    area:{
+      type: String,
+      default: '',
+      trim: true
+    },
+    student: {
+      type: Schema.ObjectId,
+      ref: 'Student'
+    },
   	user: {
   		type: Schema.ObjectId,
   		ref: 'User'
