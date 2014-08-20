@@ -3,96 +3,96 @@
     <div class="row">
       <!-- Page header, center on small screens -->
       <h1 class="col-xs-12 col-sm-4 text-left-sm">
-      <i class="fa fa-users"></i>&nbsp;&nbsp;Asignar Jurados y Asesores</h1>
+      <i class="fa fa-dashboard page-header-icon"></i>&nbsp;&nbsp;Asignar Jurados y Asesores</h1>
 
+    </div>
+  </div>
+	<h3>Asesores</h3>
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-9">
+            <form class="form-horizontal " role="form" data-ng-submit="create()">
+                
+                <div class="form-group">
+                    <label mean-token="'create-names'" class="col-md-3 control-label">Presidente</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" data-ng-model="student.names" id="names" placeholder="Presidente" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label mean-token="'create-lastNames'" class="col-md-3 control-label">Primer Miembro</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" data-ng-model="student.lastNames" id="lastNames" placeholder="Apellidos" required>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label mean-token="'create-address'" class="col-md-3 control-label">Segundo miembro</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" data-ng-model="student.address" id="address" placeholder="Dirección" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-info">Registrar</button>
+                    </div>
+                </div>
+            </form>
+         	<h3>Jurados</h3>
+            <form class="form-horizontal " role="form" data-ng-submit="create()">
+                
+                <div class="form-group">
+                    <label mean-token="'create-names'" class="col-md-3 control-label">Director</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" data-ng-model="student.names" id="names" placeholder="Nombres" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label mean-token="'create-lastNames'" class="col-md-3 control-label">Primer Asesor</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" data-ng-model="student.lastNames" id="lastNames" placeholder="Apellidos" required>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label mean-token="'create-address'" class="col-md-3 control-label">Segundo Asesor</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" data-ng-model="student.address" id="address" placeholder="Dirección" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-info">Registrar</button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </div>
-    	<h3>Asesores</h3>
+        
         <div class="row">
-            <div class="col-lg-9 col-md-9 col-sm-9">
-                <form class="form-horizontal " role="form" data-ng-submit="create()">
-                    
-                    <div class="form-group">
-                        <label mean-token="'create-names'" class="col-md-3 control-label">Presidente</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" data-ng-model="student.names" id="names" placeholder="Presidente" required>
+			<div class="col-lg-3 col-md-3 col-sm-3">
+				<div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Mis Jurados
+                    </h3>
+                </div>
+                <div class="panel-body widget-followers active">
+                    <div class="follower" ng-repeat="professor in data">
+                        <img src="/bower_components/pixel-admin/dist/images/pixel-admin/avatar.png" alt="" class="follower-avatar">
+                        <div>
+                            {{professor.names}}
+                            <div class="student">Mentor</div> 
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label mean-token="'create-lastNames'" class="col-md-3 control-label">Primer Miembro</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" data-ng-model="student.lastNames" id="lastNames" placeholder="Apellidos" required>
-                        </div>
-                    </div>
-
-                     <div class="form-group">
-                        <label mean-token="'create-address'" class="col-md-3 control-label">Segundo miembro</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" data-ng-model="student.address" id="address" placeholder="Dirección" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-3 col-md-9">
-                            <button type="submit" class="btn btn-info">Registrar</button>
-                        </div>
-                    </div>
-                </form>
-             	<h3>Jurados</h3>
-                <form class="form-horizontal " role="form" data-ng-submit="create()">
-                    
-                    <div class="form-group">
-                        <label mean-token="'create-names'" class="col-md-3 control-label">Director</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" data-ng-model="student.names" id="names" placeholder="Nombres" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label mean-token="'create-lastNames'" class="col-md-3 control-label">Primer Asesor</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" data-ng-model="student.lastNames" id="lastNames" placeholder="Apellidos" required>
-                        </div>
-                    </div>
-
-                     <div class="form-group">
-                        <label mean-token="'create-address'" class="col-md-3 control-label">Segundo Asesor</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" data-ng-model="student.address" id="address" placeholder="Dirección" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-3 col-md-9">
-                            <button type="submit" class="btn btn-info">Registrar</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
             
-            <div class="row">
-    			<div class="col-lg-3 col-md-3 col-sm-3">
-    				<div class="panel panel-success">
-    					<div class="panel-heading">
-    							<h3 class="panel-title">
-    							Docentes
-    							</h3>
-    					</div>
-    					<div class="panel-body">
-    						<div ng-repeat="professor in data">
-    							<img class="img-one" src="">
-    							<div>
-    								{{professor.names}}
-    								<div class="date">{{professor.created | date:'dd-M-yyyy H:mm'}}</div> 
-    								<div class="student">Mentor</div> 
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-        </div>
+			</div>
+		</div>
+    </div>
 
   
 </section>
