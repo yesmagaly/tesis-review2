@@ -17,13 +17,14 @@ Meetings.register(function(app, auth, database) {
     Meetings.routes(app, auth, database);
 
     //We are adding a link to the main menu for all authenticated users
+    /*
     Meetings.menus.add({
         title: 'meetings example page',
         link: 'meetings example page',
         roles: ['authenticated'],
         menu: 'main'
     });
-
+    */
     /**
     //Uncomment to use. Requires meanio@0.3.7 or above
     // Save settings with callback

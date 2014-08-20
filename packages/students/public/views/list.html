@@ -1,14 +1,32 @@
 <section data-ng-controller="StudentController">
-	<h1>
-		Lista de Estudiantes
-		<div class="pull-rigth">
-			<a ui-sref="create student" class="btn btn-primary" >Registro de Estudiantes</a>
+  <div class="page-header">
+			
+			<div class="row">
+				<!-- Page header, center on small screens -->
+				<h1 class="col-xs-12 col-sm-4 text-center text-left-sm">
+				  <i class="fa fa-dashboard page-header-icon"></i>
+				  &nbsp;&nbsp;Lista de Estudiantes
+				</h1>
+
+				<div class="col-xs-12 col-sm-8">
+					<div class="row">
+						<hr class="visible-xs no-grid-gutter-h">
+						<!-- "Create project" button, width=auto on desktops -->
+						<div class="pull-right col-xs-12 col-sm-auto">
+              <a ui-sref="create student" class="btn btn-primary btn-labeled" style="width: 100%;">
+                <span class="btn-label icon fa fa-plus"></span>
+                Registro de Estudiantes
+              </a>
+						</div>
+
+						<!-- Margin -->
+						<div class="visible-xs clearfix form-group-margin"></div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</h1>
-	<body ng-app>
 		
-		<hr>
-		<div class="panel panel-primary">
+		<div class="panel">
 			<div class="panel-heading">
 				<div class="input-group">
 					<span class= "input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
@@ -17,7 +35,7 @@
 			</div>
 		</div>
 		<div class="panel-body">
-			<table class="table" ng-init="find()">
+			<table class="table table-striped" ng-init="find()">
 				<thead>
 					<tr>
 						<th>#</th>

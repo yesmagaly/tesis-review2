@@ -1,55 +1,68 @@
 <div ng-controller="coordinadorPanelController" ng-init="init()">
-	<h1>Inicio</h1>
-	<div class="row">
-		<div class="col-lg-4 col-md-4 col-sm-4">
-			<a ui-sref="all students">
-				<div class="well">
-					<img  class="img-panel pull-left" src="">
-					<div class="well-header">
-						Estudiantes
-						<div class="amount">
-							{{students.length}}
-						</div>
-					</div>
-					
-				</div>
-			</a>
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-4">
-			<a ui-sref="all professor">
-				
-				<div class="well">
-					<img class="img-panel pull-left" src="">
-					<div class="well-header">
-						Mentores
-						<div class="amount">
-							{{professors.length}}
-						</div>
-					</div>
-				</div>
-			</a>
 
-		</div>
+  <div class="page-header">
+    <div class="row">
+      <!-- Page header, center on small screens -->
+      <h1 class="col-xs-12 col-sm-4 text-left-sm">
+      <i class="fa fa-dashboard page-header-icon"></i>&nbsp;&nbsp;Dashboard</h1>
+
+    </div>
+  </div>
+		
 		<div class="col-lg-4 col-md-4 col-sm-4">
-			<a ui-sref="all docs">
-				<div class="well">
-					<img class="img-panel pull-left" src="">
-					<div class="well-header">
-						Proyectos
-						<div class="amount">
-							{{docs.length}}
-						</div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
+      <div class="stat-panel">
+        <!-- Danger background, vertically centered text -->
+        <div class="stat-cell bg-primary valign-middle">
+          <!-- Stat panel bg icon -->
+          <i class="fa fa-user bg-icon"></i>
+          <!-- Extra large text -->
+          <span class="text-xlg"><span class="text-lg text-slim">#</span><strong>{{students.length}}</strong></span><br>
+          <!-- Big text -->
+          <span class="text-bg">Estudiantes</span><br>
+          <!-- Small text -->
+          <!-- <span class="text-sm"><a href="#">See details in your profile</a></span> -->
+        </div> <!-- /.stat-cell -->
+      </div> <!-- /.stat-panel -->
+    </div>
+		
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="stat-panel">
+        <!-- Danger background, vertically centered text -->
+        <div class="stat-cell bg-danger valign-middle">
+          <!-- Stat panel bg icon -->
+          <i class="fa fa-users bg-icon"></i>
+          <!-- Extra large text -->
+          <span class="text-xlg"><span class="text-lg text-slim">#</span><strong>{{professors.length}}</strong></span><br>
+          <!-- Big text -->
+          <span class="text-bg">Mentores</span><br>
+          <!-- Small text -->
+          <!-- <span class="text-sm"><a href="#">See details in your profile</a></span> -->
+        </div> <!-- /.stat-cell -->
+      </div> <!-- /.stat-panel -->
+    </div>
+    
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="stat-panel">
+        <!-- Danger background, vertically centered text -->
+        <div class="stat-cell bg-pa-purple valign-middle">
+          <!-- Stat panel bg icon -->
+          <i class="fa fa-cubes bg-icon"></i>
+          <!-- Extra large text -->
+          <span class="text-xlg"><span class="text-lg text-slim">#</span><strong>{{docs.length}}</strong></span><br>
+          <!-- Big text -->
+          <span class="text-bg">Proyectos</span><br>
+          <!-- Small text -->
+          <!-- <span class="text-sm"><a href="#">See details in your profile</a></span> -->
+        </div> <!-- /.stat-cell -->
+      </div> <!-- /.stat-panel -->
+    </div>
 	
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sm-4">
 			<div class="panel panel-success">
 				<div class="panel-heading">
 					<h3 class="panel-title">
+					  <i class="panel-title-icon fa fa-smile-o"></i>
 						Últimos usuarios registrados
 					</h3>
 				</div>
@@ -79,7 +92,8 @@
 			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-					Últimos proyectos
+					  <i class="panel-title-icon fa fa-tasks"></i>
+					  Últimos proyectos
 					</h3>
 				</div>	
 				<div class="panel-body">
