@@ -23,6 +23,12 @@ Students.register(function(app, auth, database) {
         roles: ['authenticated'],
         menu: 'main'
     });
+     Students.menus.add({
+        title: 'Mentor-Estudiante',
+        link: 'mentorStudent',
+        roles: ['authenticated'],
+        menu: 'main'
+    });
     /*
     Students.menus.add({
         title: 'Panel',

@@ -9,7 +9,8 @@ angular.module('mean.students')
         'Students',
         'Restangular',
         'StudentsLocal',
-    function($scope, Global, $state, $stateParams, Students, Restangular, StudentsLocal) {
+        'Professors',
+    function($scope, Global, $state, $stateParams, Students, Restangular, StudentsLocal, Professors) {
         
         $scope.global = Global;
         
@@ -46,6 +47,12 @@ angular.module('mean.students')
             student.customDELETE(id).then(function () {
               StudentsLocal.remove(id);
             });
+          
+        };
+          $scope.getProfessors = function(id) {
+            Professors.getList().then(function (professors) {
+                $scope.data = professors;
+            })
           
         };
 
