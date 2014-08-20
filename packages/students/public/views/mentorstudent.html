@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-9">
                 <form class="form-horizontal " role="form" data-ng-submit="create()">
-                    
+
                     <div class="form-group">
                         <label mean-token="'create-names'" class="col-md-3 control-label">Presidente</label>
                         <div class="col-md-9">
@@ -41,36 +41,39 @@
                 </form>
              	<h3>Jurados</h3>
                 <form class="form-horizontal " role="form" data-ng-submit="create()">
-                    
+
                     <div class="form-group">
                         <label mean-token="'create-names'" class="col-md-3 control-label">Director</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" data-ng-model="student.names" id="names" placeholder="Nombres" required>
+                            <input
+                            type="text"
+                            data-drop="true"
+                            data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list3])'}"
+                            jqyoui-droppable="{multiple:true}"
+                            class="form-control"
+                            data-ng-model="student.names"
+                            id="names"
+                            placeholder="Nombres"
+                            required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label mean-token="'create-lastNames'" class="col-md-3 control-label">Primer Asesor</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" data-ng-model="student.lastNames" id="lastNames" placeholder="Apellidos" required>
+                            <input type="text" data-drop="true" class="form-control" data-ng-model="student.lastNames" id="lastNames" placeholder="Apellidos" required>
                         </div>
                     </div>
 
                      <div class="form-group">
                         <label mean-token="'create-address'" class="col-md-3 control-label">Segundo Asesor</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" data-ng-model="student.address" id="address" placeholder="Dirección" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-3 col-md-9">
-                            <button type="submit" class="btn btn-info">Registrar</button>
+                            <input type="text" data-drop="true" class="form-control" data-ng-model="student.address" id="address" placeholder="Dirección" required>
                         </div>
                     </div>
                 </form>
             </div>
-            
+
             <div class="row">
     			<div class="col-lg-3 col-md-3 col-sm-3">
     				<div class="panel panel-success">
@@ -80,13 +83,22 @@
     							</h3>
     					</div>
     					<div class="panel-body">
-    						<div ng-repeat="professor in data">
+    						<div data-drag="true" ng-repeat="professor in data">
     							<img class="img-one" src="">
     							<div>
     								{{professor.names}}
-    								<div class="date">{{professor.created | date:'dd-M-yyyy H:mm'}}</div> 
-    								<div class="student">Mentor</div> 
+    								<div class="date">{{professor.created | date:'dd-M-yyyy H:mm'}}</div>
+    								<div class="student">Mentor</div>
     							</div>
+
+                  <div class="btn btn-info btn-draggable"
+                    data-drag="true"
+                    data-jqyoui-options="{revert: 'invalid'}"
+                    ng-model="list5"
+                    jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}"
+                    ng-hide="!professor.names">
+                    {{professor.names}}
+                  </div>
     						</div>
     					</div>
     				</div>
@@ -94,5 +106,5 @@
     		</div>
         </div>
 
-  
+
 </section>

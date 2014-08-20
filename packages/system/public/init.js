@@ -23,7 +23,8 @@ var modules = [
   'ui.bootstrap',
   'ui.router',
   'restangular',
-  'ngSanitize'
+  'ngSanitize',
+  'ngDragDrop'
   ];
 
 modules = modules.concat(packageModules);
