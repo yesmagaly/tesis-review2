@@ -40,8 +40,17 @@
 						<th>#</th>
 						<th>DNI</th>
 						<th>
+							<a href="" ng-click="orderByValue('lastNames')">
+								Apellidos 
+							</a>
+
+							<a href="" ng-click="orderByValue('-lastNames')">
+								<i class="fa fa-caret-down"></i>
+							</a>
+						</th>
+						<th>
 							<a href="" ng-click="orderByValue('names')">
-								Apellidos Nombres
+								Nombres
 							</a>
 
 							<a href="" ng-click="orderByValue('-names')">
@@ -57,7 +66,8 @@
 					<tr ng-repeat="professor in professors | orderBy:filterSelected |filter:buscar">
 						<td>{{$index+1}}</td>
 						<td>{{professor.document}}</td>
-						<td>{{professor.lastNames | uppercase}} {{professor.names}}</td>  
+						<td>{{professor.lastNames | uppercase}}</td>  
+						<td>{{professor.names}}</td>  
 						<td>{{professor.code}}</td>
 						<td>
 							<a href="/#!/professors/edit/{{professor._id}}" class="btn btn-success btn-xs" >
